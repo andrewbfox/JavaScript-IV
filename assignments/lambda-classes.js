@@ -1,4 +1,5 @@
 // CODE here for your Lambda Classes
+
 class Person {
     constructor(attrs) {
         this.name = attrs.name;
@@ -33,7 +34,7 @@ class Student extends Person {
         this.favSubjects = attrs.favSubjects;
     }
     listsSubjects() {
-        return this.favoriteSubjects;
+        return this.favSubjects;
     }
     PRAssignment(subject) {
         return `${this.name} has submitted a PR for ${subject}`;
@@ -128,3 +129,39 @@ const fred = new Instructor({
       gradClassName: "CS1",
       favInstructor: "Sean",
   })
+
+  // Testing the code
+
+  console.log(andy);
+  console.log(rob);
+  console.log(fred);
+  console.log(pebbles);
+  console.log(abigail);
+  console.log(beulah);
+  console.log(clara);
+  console.log(rudolph);
+
+console.log(andy.speak());
+console.log(fred.speak());
+console.log(abigail.speak());
+console.log(clara.speak());
+
+console.log(pebbles.demo('JavaScript'));
+console.log(rudolph.grade(abigail, 'CSS'));
+
+console.log(abigail.listsSubjects());
+console.log(abigail.PRAssignment('React'));
+console.log(abigail.sprintChallenge('HTML'));
+
+console.log(rudolph.standUp("WEB21_Rudolph"));
+console.log(rudolph.debugsCode(beulah, "BASIC"));
+console.log(clara.demo('Forth'));
+console.log(rudolph.grade(beulah, 'COBOL'));
+
+console.log(`Andy's age is ${andy.age}`);
+console.log(`Fred's favorite language is ${fred.favLanguage}, and his specialty is ${fred.specialty}`)
+console.log(`Pebbles's catchphrase is ${pebbles.catchPhrase}`)
+console.log(`Abigail's background is ${abigail.previousBackground}`)
+console.log(`Beulah's favorite subjects are ${beulah.favSubjects}`)
+console.log(`Clara's favorite language is ${clara.favLanguage}, her specialty is ${clara.specialty}, and her catchphrase is ${clara.catchPhrase}`)
+console.log(`Rudolph's graduating class was ${rudolph.gradClassName}, and his favorite instructor is ${rudolph.favInstructor}`)
