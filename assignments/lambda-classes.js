@@ -32,9 +32,10 @@ class Student extends Person {
         this.previousBackground = attrs.previousBackground;
         this.className = attrs.className;
         this.favSubjects = attrs.favSubjects;
+        this.grade = Math.floor((Math.random() * 100) + 1);
     }
     listsSubjects() {
-        return this.favSubjects;
+        return this.favSubjects.toString();
     }
     PRAssignment(subject) {
         return `${this.name} has submitted a PR for ${subject}`;
@@ -131,7 +132,7 @@ const fred = new Instructor({
   })
 
   // Testing the code
-
+/*
   console.log(andy);
   console.log(rob);
   console.log(fred);
@@ -165,3 +166,6 @@ console.log(`Abigail's background is ${abigail.previousBackground}`)
 console.log(`Beulah's favorite subjects are ${beulah.favSubjects}`)
 console.log(`Clara's favorite language is ${clara.favLanguage}, her specialty is ${clara.specialty}, and her catchphrase is ${clara.catchPhrase}`)
 console.log(`Rudolph's graduating class was ${rudolph.gradClassName}, and his favorite instructor is ${rudolph.favInstructor}`)
+*/
+console.log(abigail.grade);
+console.log(beulah.grade);
