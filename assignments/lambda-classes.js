@@ -44,13 +44,31 @@ class Student extends Person {
         this.studentGrade = Math.floor((Math.random() * 100) + 1);
     }
     listsSubjects() {
-        return this.favSubjects.toString();
+        let subjectString = " ";
+        for (let i = 0; i < this.favSubjects.length; i++) {
+            subjectString += this.favSubjects[i];
+            if (i < this.favSubjects.length - 2) {
+                subjectString += ", ";
+            } else if (i < this.favSubjects.length -1) {
+                subjectString += ", and "
+            }
+        }
+        return `${this.name}'s favorite subjects are${subjectString}`;
     }
     PRAssignment(subject) {
         return `${this.name} has submitted a PR for ${subject}`;
     }
     sprintChallenge(subject) {
         return `${this.name} has begun sprint challenge on ${subject}`;
+    }
+    graduate(instructor) {
+        if (this.studentGrade > 70) {
+            return `${this.name} has graduated from Lambda School!`;
+        } else {
+            return `${this.name} needs to go back to class.`;
+            // instructor.changeGrade(this);
+            // this.graduate(instructor);
+        }
     }
 }
 
@@ -89,67 +107,67 @@ const fred = new Instructor({
     favLanguage: 'JavaScript',
     specialty: 'Front-end',
     catchPhrase: `Don't forget the homies`
-  });
+});
 
-  const pebbles = new Instructor({
-    age: 3,
-    name: 'Pebbles',
-    location: 'Bedrock',
-    favLanguage: 'Ada',
+const pebbles = new Instructor({
+age: 3,
+name: 'Pebbles',
+location: 'Bedrock',
+favLanguage: 'Ada',
+specialty: 'Data science',
+catchPhrase: 'Goo goo gaa gaa',
+});
+
+const abigail = new Student({
+    name: "Abigail",
+    age: 23,
+    location: "New York",
+    previousBackground: "Columbia University",
+    className: "CS132",
+    favSubjects: ['Html', 'CSS', 'JavaScript'],
+})
+
+const beulah = new Student({
+    name: "Beulah",
+    age: 21,
+    location: "Buffalo",
+    previousBackground: "Clemson",
+    className: "WEB21",
+    favSubjects: ['Python', 'Ada', 'Rexx'],
+})
+
+const clara = new ProjectManager({
+    name: "Clara",
+    age: 21,
+    location: "London",
+    favLanguage: 'Lisp',
     specialty: 'Data science',
-    catchPhrase: 'Goo goo gaa gaa',
-  });
+    catchPhrase: 'Sic gorgiamus allos subjectatos nunc!',
+    gradClassName: "WEB8",
+    favInstructor: "Darren",
+})
 
-  const abigail = new Student({
-      name: "Abigail",
-      age: 23,
-      location: "New York",
-      previousBackground: "Columbia University",
-      className: "CS132",
-      favSubjects: ['Html', 'CSS', 'JavaScript'],
-  })
+const rudolph = new ProjectManager({
+    name: "Rudolph",
+    age: 32,
+    location: "Chicago",
+    favLanguage: 'Python',
+    specialty: 'Full stack',
+    catchPhrase: 'Wherever you go, there you are',
+    gradClassName: "CS1",
+    favInstructor: "Sean",
+})
 
-  const beulah = new Student({
-      name: "Beulah",
-      age: 21,
-      location: "Buffalo",
-      previousBackground: "Clemson",
-      className: "WEB21",
-      favSubjects: ['Python', 'Ada', 'Rexx'],
-  })
+// Testing the code
 
-  const clara = new ProjectManager({
-      name: "Clara",
-      age: 21,
-      location: "London",
-      favLanguage: 'Lisp',
-      specialty: 'Data science',
-      catchPhrase: 'Sic gorgiamus allos subjectatos nunc!',
-      gradClassName: "WEB8",
-      favInstructor: "Darren",
-  })
-
-  const rudolph = new ProjectManager({
-      name: "Rudolph",
-      age: 32,
-      location: "Chicago",
-      favLanguage: 'Python',
-      specialty: 'Full stack',
-      catchPhrase: 'Wherever you go, there you are',
-      gradClassName: "CS1",
-      favInstructor: "Sean",
-  })
-
-  // Testing the code
-/*
-  console.log(andy);
-  console.log(rob);
-  console.log(fred);
-  console.log(pebbles);
-  console.log(abigail);
-  console.log(beulah);
-  console.log(clara);
-  console.log(rudolph);
+console.log(andy);
+console.log(rob);
+console.log(fred);
+console.log(pebbles);
+console.log(abigail);
+console.log(beulah);
+console.log(clara);
+console.log(rudolph);
 
 console.log(andy.speak());
 console.log(fred.speak());
@@ -162,6 +180,7 @@ console.log(rudolph.grade(abigail, 'CSS'));
 console.log(abigail.listsSubjects());
 console.log(abigail.PRAssignment('React'));
 console.log(abigail.sprintChallenge('HTML'));
+console.log(beulah.listsSubjects());
 
 console.log(rudolph.standUp("WEB21_Rudolph"));
 console.log(rudolph.debugsCode(beulah, "BASIC"));
@@ -175,12 +194,10 @@ console.log(`Abigail's background is ${abigail.previousBackground}`)
 console.log(`Beulah's favorite subjects are ${beulah.favSubjects}`)
 console.log(`Clara's favorite language is ${clara.favLanguage}, her specialty is ${clara.specialty}, and her catchphrase is ${clara.catchPhrase}`)
 console.log(`Rudolph's graduating class was ${rudolph.gradClassName}, and his favorite instructor is ${rudolph.favInstructor}`)
-*/
+
 console.log(abigail.studentGrade);
 console.log(beulah.studentGrade);
-
 console.log(fred.changeGrade(abigail));
 console.log(pebbles.changeGrade(beulah));
-
-console.log(abigail.studentGrade);
-console.log(beulah.studentGrade);
+console.log(abigail.graduate(fred));
+console.log(beulah.graduate(pebbles));
