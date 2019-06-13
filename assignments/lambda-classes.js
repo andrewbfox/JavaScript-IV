@@ -24,6 +24,15 @@ class Instructor extends Person {
     grade(student, subject) {
         return `${student.name} receives a perfect score on ${subject}`;
     }
+    changeGrade(student) {
+        student.studentGrade += (Math.floor((Math.random() * 20) + 1) - 10);
+        if (student.studentGrade > 100) {
+            student.studentGrade = 100;
+        } else if (student.studentGrade < 0) {
+            student.studentGrade = 0;
+        }
+        return student.studentGrade;
+    }
 }
 
 class Student extends Person {
@@ -32,7 +41,7 @@ class Student extends Person {
         this.previousBackground = attrs.previousBackground;
         this.className = attrs.className;
         this.favSubjects = attrs.favSubjects;
-        this.grade = Math.floor((Math.random() * 100) + 1);
+        this.studentGrade = Math.floor((Math.random() * 100) + 1);
     }
     listsSubjects() {
         return this.favSubjects.toString();
@@ -167,5 +176,11 @@ console.log(`Beulah's favorite subjects are ${beulah.favSubjects}`)
 console.log(`Clara's favorite language is ${clara.favLanguage}, her specialty is ${clara.specialty}, and her catchphrase is ${clara.catchPhrase}`)
 console.log(`Rudolph's graduating class was ${rudolph.gradClassName}, and his favorite instructor is ${rudolph.favInstructor}`)
 */
-console.log(abigail.grade);
-console.log(beulah.grade);
+console.log(abigail.studentGrade);
+console.log(beulah.studentGrade);
+
+console.log(fred.changeGrade(abigail));
+console.log(pebbles.changeGrade(beulah));
+
+console.log(abigail.studentGrade);
+console.log(beulah.studentGrade);
