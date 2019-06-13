@@ -6,7 +6,7 @@ class Person {
         this.location = attrs.location;
     }
     speak() {
-        return `Hello my name is ${this.name}, I am from ${this.location}`
+        return `Hello my name is ${this.name}, I am from ${this.location}`;
     }
 }
 
@@ -18,10 +18,10 @@ class Instructor extends Person {
         this.catchPhrase = attrs.catchPhrase;
     }
     demo(subject) {
-        return `Today we are learning about ${subject}`
+        return `Today we are learning about ${subject}`;
     }
     grade(student, subject) {
-        return `${student.name} receives a perfect score on ${subject}`
+        return `${student.name} receives a perfect score on ${subject}`;
     }
 }
 
@@ -33,13 +33,13 @@ class Student extends Person {
         this.favSubjects = attrs.favSubjects;
     }
     listsSubjects() {
-        // a method that logs out all of the student's favoriteSubjects one by one.
+        return this.favoriteSubjects;
     }
     PRAssignment(subject) {
-        // a method that receives a subject as an argument and logs out that the student.name has submitted a PR for {subject}
+        return `${this.name} has submitted a PR for ${subject}`;
     }
     sprintChallenge(subject) {
-        // similar to PRAssignment but logs out student.name has begun sprint challenge on {subject}
+        return `${this.name} has begun sprint challenge on ${subject}`;
     }
 }
 
@@ -50,9 +50,9 @@ class ProjectManager extends Instructor {
         this.favInstructor = attrs.favInstructor;
     }
     standUp(channel) {
-        // a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​
+        return `${this.name} announces to ${channel}, @channel standy times!​​​​​`;
     }
     debugsCode(student, subject) {
-        // a method that takes in a student object and a subject and logs out {name} debugs {student.name}'s code on {subject}
+        return `${this.name} debugs ${student.name}'s code on ${subject}`;
     }
 }
