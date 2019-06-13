@@ -56,3 +56,75 @@ class ProjectManager extends Instructor {
         return `${this.name} debugs ${student.name}'s code on ${subject}`;
     }
 }
+
+// New Objects
+
+const andy = new Person({
+    name: "Andy",
+    age: 53,
+    location: "Watsontown",
+})
+
+const rob = new Person({
+    name: "Rob",
+    age: 52,
+    location: "Bethlehem",
+})
+
+const fred = new Instructor({
+    name: 'Fred',
+    location: 'Bedrock',
+    age: 37,
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget the homies`
+  });
+
+  const pebbles = new Instructor({
+    age: 3,
+    name: 'Pebbles',
+    location: 'Bedrock',
+    favLanguage: 'Ada',
+    specialty: 'Data science',
+    catchPhrase: 'Goo goo gaa gaa',
+  });
+
+  const abigail = new Student({
+      name: "Abigail",
+      age: 23,
+      location: "New York",
+      previousBackground: "Columbia University",
+      className: "CS132",
+      favSubjects: ['Html', 'CSS', 'JavaScript'],
+  })
+
+  const beulah = new Student({
+      name: "Beulah",
+      age: 21,
+      location: "Buffalo",
+      previousBackground: "Clemson",
+      className: "WEB21",
+      favSubjects: ['Python', 'Ada', 'Rexx'],
+  })
+
+  const clara = new ProjectManager({
+      name: "Clara",
+      age: 21,
+      location: "London",
+      favLanguage: 'Lisp',
+      specialty: 'Data science',
+      catchPhrase: 'Sic gorgiamus allos subjectatos nunc!',
+      gradClassName: "WEB8",
+      favInstructor: "Darren",
+  })
+
+  const rudolph = new ProjectManager({
+      name: "Rudolph",
+      age: 32,
+      location: "Chicago",
+      favLanguage: 'Python',
+      specialty: 'Full stack',
+      catchPhrase: 'Wherever you go, there you are',
+      gradClassName: "CS1",
+      favInstructor: "Sean",
+  })
